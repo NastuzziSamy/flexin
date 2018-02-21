@@ -1,0 +1,2231 @@
+<Project version="16.9.0.5" localizationFileName="C:\Program Files (x86)\SQL Maestro Group\PostgreSQL PHP Generator Professional\lang.en.php" phpDriver="0" outputPath="C:\wamp64\www" copySystemFiles="true" outputFilesExtension="php" colorSchemeName="cerulean">
+  <ConnectionOptions host="localhost" port="5432" login="postgres" password="U-?-J:WU\?L~" database="postgres" client_encoding="">
+    <ssh_secure secure="false" port="22" authentication_mode="0"/>
+    <http_tunnel tunneling="false" url=" ">
+      <http_proxy_server use_proxy="false" port="8080"/>
+      <http_authentication/>
+    </http_tunnel>
+  </ConnectionOptions>
+  <ScriptConnectionOptions host="localhost" port="5432" login="postgres" password="U-?-J:WU\?L~" database="postgres" client_encoding="">
+    <ssh_secure secure="false" port="22" authentication_mode="0"/>
+    <http_tunnel tunneling="false" url=" ">
+      <http_proxy_server use_proxy="false" port="8080"/>
+      <http_authentication/>
+    </http_tunnel>
+  </ScriptConnectionOptions>
+  <DataSources>
+    <DataSource name="Inventaire.Reference"/>
+    <DataSource name="Inventaire.Borrow"/>
+    <DataSource name="Inventaire.Category"/>
+    <DataSource name="Inventaire.State"/>
+    <DataSource name="Inventaire.Person"/>
+    <DataSource name="Inventaire.Sub-Category"/>
+    <DataSource name="btn_code_barre" type="query">
+      <PrimaryKeyFields>
+        <Field name="ID_Equipment"/>
+      </PrimaryKeyFields>
+      <SelectStatement>
+SELECT
+      &quot;Inventaire&quot;.&quot;Equipment&quot;.&quot;ID_Equipment&quot;,
+      &quot;Inventaire&quot;.&quot;Equipment&quot;.&quot;Equipement_name&quot;,
+      &quot;Inventaire&quot;.&quot;Equipment&quot;.&quot;CodeBarre&quot; as &quot;btn_codebarre&quot;
+FROM
+    &quot;Inventaire&quot;.&quot;Equipment&quot;      </SelectStatement>
+    </DataSource>
+    <DataSource name="Inventaire.Equipment"/>
+    <DataSource name="Inventaire.Infrastructure"/>
+    <DataSource name="Inventaire.Position"/>
+  </DataSources>
+  <Presentation disableMagicQuotesRuntime="false" showEnvironmentVariables="false" showExecutedQueries="false" showPHPErrorsAndWarnings="false">
+    <Pages>
+      <Page type="table" tableName="Inventaire.Reference" numberByDataSource="0" fileName="Reference" caption="Reference" shortCaption="Reference" addSeparator="false" horizontalFilterCondition="" openAdvancedSearchAtFirst="false" recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="1" deleteAbilityMode="3" deleteSelectedAbilityMode="3" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false">
+        <BeforeGridText/>
+        <DetailedDescription/>
+        <ColumnPresentations>
+          <ColumnPresentation fieldName="ID_Reference" caption="ID Reference" showColumnFilter="false" selectedFilterOperators="1573119">
+            <ViewProperties type="text">
+              <Format type="number" thousandSeparator=","/>
+            </ViewProperties>
+            <EditProperties type="textBox" maxLength="0"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="entitled" caption="Entitled" showColumnFilter="false" selectedFilterOperators="1589247">
+            <ViewProperties type="text" maxLength="75"/>
+            <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+          </ColumnPresentation>
+        </ColumnPresentations>
+        <Columns>
+          <List>
+            <Column fieldName="ID_Reference"/>
+            <Column fieldName="entitled"/>
+          </List>
+          <View>
+            <Column fieldName="ID_Reference"/>
+            <Column fieldName="entitled"/>
+          </View>
+          <Edit>
+            <Column fieldName="ID_Reference" visible="false"/>
+            <Column fieldName="entitled"/>
+          </Edit>
+          <Insert>
+            <Column fieldName="ID_Reference" visible="false"/>
+            <Column fieldName="entitled"/>
+          </Insert>
+          <QuickFilter>
+            <Column fieldName="ID_Reference"/>
+            <Column fieldName="entitled"/>
+          </QuickFilter>
+          <FilterBuilder>
+            <Column fieldName="ID_Reference"/>
+            <Column fieldName="entitled"/>
+          </FilterBuilder>
+          <Print>
+            <Column fieldName="ID_Reference"/>
+            <Column fieldName="entitled"/>
+          </Print>
+          <Export>
+            <Column fieldName="ID_Reference"/>
+            <Column fieldName="entitled"/>
+          </Export>
+          <Compare>
+            <Column fieldName="ID_Reference"/>
+            <Column fieldName="entitled"/>
+          </Compare>
+        </Columns>
+        <Details/>
+        <RecordPermissions useRecordPermissions="false"/>
+        <PartitionNavigators/>
+      </Page>
+      <Page type="table" tableName="Inventaire.Borrow" numberByDataSource="0" fileName="Borrow" caption="Borrow" shortCaption="Borrow" addSeparator="false" horizontalFilterCondition="" openAdvancedSearchAtFirst="false" recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="1" deleteAbilityMode="3" deleteSelectedAbilityMode="3" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false">
+        <BeforeGridText/>
+        <DetailedDescription/>
+        <ColumnPresentations>
+          <ColumnPresentation fieldName="ID_Person" caption="Person" selectedFilterOperators="1589247">
+            <Lookup tableName="Inventaire.Person" linkFieldName="ID_Person" displayFieldName="Name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+            <ViewProperties type="text" maxLength="75"/>
+            <EditProperties type="comboBox"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="ID_Borrow" caption="ID Borrow" showColumnFilter="false" selectedFilterOperators="1573119">
+            <ViewProperties type="text">
+              <Format type="number" thousandSeparator=","/>
+            </ViewProperties>
+            <EditProperties type="textBox" maxLength="0"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="ID_Equipment" caption="ID Equipment" selectedFilterOperators="1589247">
+            <Lookup tableName="Inventaire.Equipment" linkFieldName="ID_Equipment" displayFieldName="Equipement_name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+            <ViewProperties type="text" maxLength="75"/>
+            <EditProperties type="textBox" maxLength="0"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="Borrowing_hour" caption="Borrowing Hour" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1573119">
+            <ViewProperties type="dateTime" dateTimeFormat="H:i:s" dateTimeKind="2"/>
+            <EditProperties type="time"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="Borrowing_date" caption="Borrowing Date" canSetNull="true" selectedFilterOperators="2031871">
+            <ViewProperties type="dateTime" dateTimeFormat="Y-m-d H:i:s"/>
+            <EditProperties type="dateTime" dateTimeFormat="Y-m-d H:i:s" firstDayOfWeek="0"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="return_date" caption="Return Date" canSetNull="true" selectedFilterOperators="2031871">
+            <ViewProperties type="dateTime" dateTimeFormat="Y-m-d H:i:s"/>
+            <EditProperties type="dateTime" dateTimeFormat="Y-m-d H:i:s" firstDayOfWeek="0"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="Return_hour" caption="Return Hour" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1573119">
+            <ViewProperties type="dateTime" dateTimeFormat="H:i:s" dateTimeKind="2"/>
+            <EditProperties type="time"/>
+          </ColumnPresentation>
+        </ColumnPresentations>
+        <Columns>
+          <List>
+            <Column fieldName="ID_Person"/>
+            <Column fieldName="ID_Borrow"/>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="Borrowing_date"/>
+            <Column fieldName="Borrowing_hour"/>
+            <Column fieldName="return_date"/>
+            <Column fieldName="Return_hour"/>
+          </List>
+          <View>
+            <Column fieldName="ID_Person"/>
+            <Column fieldName="ID_Borrow"/>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="Borrowing_hour"/>
+            <Column fieldName="Borrowing_date"/>
+            <Column fieldName="return_date"/>
+            <Column fieldName="Return_hour"/>
+          </View>
+          <Edit>
+            <Column fieldName="ID_Person"/>
+            <Column fieldName="ID_Borrow" visible="false"/>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="Borrowing_hour"/>
+            <Column fieldName="Borrowing_date"/>
+            <Column fieldName="return_date"/>
+            <Column fieldName="Return_hour"/>
+          </Edit>
+          <Insert>
+            <Column fieldName="ID_Person"/>
+            <Column fieldName="ID_Borrow" visible="false"/>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="Borrowing_hour"/>
+            <Column fieldName="Borrowing_date"/>
+            <Column fieldName="return_date"/>
+            <Column fieldName="Return_hour"/>
+          </Insert>
+          <QuickFilter>
+            <Column fieldName="ID_Person"/>
+            <Column fieldName="ID_Borrow"/>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="Borrowing_hour"/>
+            <Column fieldName="Borrowing_date"/>
+            <Column fieldName="return_date"/>
+            <Column fieldName="Return_hour"/>
+          </QuickFilter>
+          <FilterBuilder>
+            <Column fieldName="ID_Person"/>
+            <Column fieldName="ID_Borrow"/>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="Borrowing_hour"/>
+            <Column fieldName="Borrowing_date"/>
+            <Column fieldName="return_date"/>
+            <Column fieldName="Return_hour"/>
+          </FilterBuilder>
+          <Print>
+            <Column fieldName="ID_Person"/>
+            <Column fieldName="ID_Borrow"/>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="Borrowing_hour"/>
+            <Column fieldName="Borrowing_date"/>
+            <Column fieldName="return_date"/>
+            <Column fieldName="Return_hour"/>
+          </Print>
+          <Export>
+            <Column fieldName="ID_Person"/>
+            <Column fieldName="ID_Borrow"/>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="Borrowing_hour"/>
+            <Column fieldName="Borrowing_date"/>
+            <Column fieldName="return_date"/>
+            <Column fieldName="Return_hour"/>
+          </Export>
+          <Compare>
+            <Column fieldName="ID_Person"/>
+            <Column fieldName="ID_Borrow" visible="false"/>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="Borrowing_hour"/>
+            <Column fieldName="Borrowing_date"/>
+            <Column fieldName="return_date"/>
+            <Column fieldName="Return_hour"/>
+          </Compare>
+        </Columns>
+        <Details/>
+        <RecordPermissions useRecordPermissions="false"/>
+        <PartitionNavigators/>
+      </Page>
+      <Page type="table" tableName="Inventaire.Category" numberByDataSource="0" fileName="Category" caption="Category" shortCaption="Category" addSeparator="false" horizontalFilterCondition="" openAdvancedSearchAtFirst="false" recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="1" deleteAbilityMode="3" deleteSelectedAbilityMode="3" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false">
+        <BeforeGridText/>
+        <DetailedDescription/>
+        <ColumnPresentations>
+          <ColumnPresentation fieldName="Category_Name" caption="Category Name" showColumnFilter="false" selectedFilterOperators="1589247">
+            <ViewProperties type="text" maxLength="75"/>
+            <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="ID_Category" caption="ID Category" showColumnFilter="false" selectedFilterOperators="1573119">
+            <ViewProperties type="text">
+              <Format type="number" thousandSeparator=","/>
+            </ViewProperties>
+            <EditProperties type="textBox" maxLength="0"/>
+          </ColumnPresentation>
+        </ColumnPresentations>
+        <Columns>
+          <List>
+            <Column fieldName="Category_Name"/>
+            <Column fieldName="ID_Category"/>
+          </List>
+          <View>
+            <Column fieldName="Category_Name"/>
+            <Column fieldName="ID_Category"/>
+          </View>
+          <Edit>
+            <Column fieldName="Category_Name"/>
+            <Column fieldName="ID_Category" visible="false"/>
+          </Edit>
+          <Insert>
+            <Column fieldName="Category_Name"/>
+            <Column fieldName="ID_Category" visible="false"/>
+          </Insert>
+          <QuickFilter>
+            <Column fieldName="Category_Name"/>
+            <Column fieldName="ID_Category"/>
+          </QuickFilter>
+          <FilterBuilder>
+            <Column fieldName="Category_Name"/>
+            <Column fieldName="ID_Category"/>
+          </FilterBuilder>
+          <Print>
+            <Column fieldName="Category_Name"/>
+            <Column fieldName="ID_Category"/>
+          </Print>
+          <Export>
+            <Column fieldName="Category_Name"/>
+            <Column fieldName="ID_Category"/>
+          </Export>
+          <Compare>
+            <Column fieldName="Category_Name"/>
+            <Column fieldName="ID_Category" visible="false"/>
+          </Compare>
+        </Columns>
+        <Details>
+          <Detail caption="Sub-Category">
+            <Page type="table" tableName="Inventaire.Sub-Category" numberByDataSource="0" fileName="Sub-Category" caption="Sub-Category" shortCaption="Sub-Category" addSeparator="false" horizontalFilterCondition="" openAdvancedSearchAtFirst="false" recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="1" deleteAbilityMode="3" deleteSelectedAbilityMode="3" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false">
+              <BeforeGridText/>
+              <DetailedDescription/>
+              <ColumnPresentations>
+                <ColumnPresentation fieldName="Sub-category_Name" caption="Sub-category Name" showColumnFilter="false" selectedFilterOperators="1589247">
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Sub-category" caption="ID Sub-category" showColumnFilter="false" selectedFilterOperators="1573119">
+                  <ViewProperties type="text">
+                    <Format type="number" thousandSeparator=","/>
+                  </ViewProperties>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Category" caption="ID Category" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.Category" linkFieldName="ID_Category" displayFieldName="Category_Name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+              </ColumnPresentations>
+              <Columns>
+                <List>
+                  <Column fieldName="Sub-category_Name"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_Category"/>
+                </List>
+                <View>
+                  <Column fieldName="Sub-category_Name"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_Category"/>
+                </View>
+                <Edit>
+                  <Column fieldName="Sub-category_Name"/>
+                  <Column fieldName="ID_Sub-category" visible="false"/>
+                  <Column fieldName="ID_Category"/>
+                </Edit>
+                <Insert>
+                  <Column fieldName="Sub-category_Name"/>
+                  <Column fieldName="ID_Sub-category" visible="false"/>
+                  <Column fieldName="ID_Category"/>
+                </Insert>
+                <QuickFilter>
+                  <Column fieldName="Sub-category_Name"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_Category"/>
+                </QuickFilter>
+                <FilterBuilder>
+                  <Column fieldName="Sub-category_Name"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_Category"/>
+                </FilterBuilder>
+                <Print>
+                  <Column fieldName="Sub-category_Name"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_Category"/>
+                </Print>
+                <Export>
+                  <Column fieldName="Sub-category_Name"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_Category"/>
+                </Export>
+                <Compare>
+                  <Column fieldName="Sub-category_Name"/>
+                  <Column fieldName="ID_Sub-category" visible="false"/>
+                  <Column fieldName="ID_Category"/>
+                </Compare>
+              </Columns>
+              <Details/>
+              <RecordPermissions useRecordPermissions="false"/>
+              <PartitionNavigators/>
+            </Page>
+            <MasterForeignKeyColumnMap>
+              <FieldMap masterColumnName="ID_Category" foreginColumnName="ID_Category"/>
+            </MasterForeignKeyColumnMap>
+          </Detail>
+        </Details>
+        <RecordPermissions useRecordPermissions="false"/>
+        <PartitionNavigators/>
+      </Page>
+      <Page type="table" tableName="Inventaire.State" numberByDataSource="0" fileName="State" caption="State" shortCaption="State" addSeparator="false" horizontalFilterCondition="" openAdvancedSearchAtFirst="false" recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="1" deleteAbilityMode="3" deleteSelectedAbilityMode="3" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false">
+        <BeforeGridText/>
+        <DetailedDescription/>
+        <ColumnPresentations>
+          <ColumnPresentation fieldName="ID_State" caption="ID State" showColumnFilter="false" selectedFilterOperators="1573119">
+            <ViewProperties type="text">
+              <Format type="number" thousandSeparator=","/>
+            </ViewProperties>
+            <EditProperties type="textBox" maxLength="0"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="State_name" caption="State Name" showColumnFilter="false" selectedFilterOperators="1589247">
+            <ViewProperties type="text" maxLength="75"/>
+            <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+          </ColumnPresentation>
+        </ColumnPresentations>
+        <Columns>
+          <List>
+            <Column fieldName="ID_State"/>
+            <Column fieldName="State_name"/>
+          </List>
+          <View>
+            <Column fieldName="ID_State"/>
+            <Column fieldName="State_name"/>
+          </View>
+          <Edit>
+            <Column fieldName="ID_State" visible="false"/>
+            <Column fieldName="State_name"/>
+          </Edit>
+          <Insert>
+            <Column fieldName="ID_State" visible="false"/>
+            <Column fieldName="State_name"/>
+          </Insert>
+          <QuickFilter>
+            <Column fieldName="ID_State"/>
+            <Column fieldName="State_name"/>
+          </QuickFilter>
+          <FilterBuilder>
+            <Column fieldName="ID_State"/>
+            <Column fieldName="State_name"/>
+          </FilterBuilder>
+          <Print>
+            <Column fieldName="ID_State"/>
+            <Column fieldName="State_name"/>
+          </Print>
+          <Export>
+            <Column fieldName="ID_State"/>
+            <Column fieldName="State_name"/>
+          </Export>
+          <Compare>
+            <Column fieldName="ID_State"/>
+            <Column fieldName="State_name"/>
+          </Compare>
+        </Columns>
+        <Details>
+          <Detail caption="Equipment">
+            <Page type="table" tableName="Inventaire.Equipment" numberByDataSource="0" fileName="Equipment" caption="Equipment" shortCaption="Equipment" addSeparator="false" horizontalFilterCondition="" openAdvancedSearchAtFirst="false" recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="1" deleteAbilityMode="3" deleteSelectedAbilityMode="3" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false">
+              <BeforeGridText/>
+              <DetailedDescription/>
+              <ColumnPresentations>
+                <ColumnPresentation fieldName="ID_Equipment" caption="ID Equipment" showColumnFilter="false" selectedFilterOperators="1573119">
+                  <ViewProperties type="text">
+                    <Format type="number" thousandSeparator=","/>
+                  </ViewProperties>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="Equipement_name" caption="Equipement Name" showColumnFilter="false" selectedFilterOperators="1589247">
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="Description" caption="Description" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1589247">
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Containing" caption="ID Containing" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1573119">
+                  <ViewProperties type="text">
+                    <Format type="number" thousandSeparator=","/>
+                  </ViewProperties>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Position" caption="ID Position" selectedFilterOperators="1573119">
+                  <ViewProperties type="dateTime" dateTimeKind="1"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Sub-category" caption="ID Sub-category" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.Sub-Category" linkFieldName="ID_Sub-category" displayFieldName="Sub-category_Name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_State" caption="ID State" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.State" linkFieldName="ID_State" displayFieldName="State_name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Reference" caption="ID Reference" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.Reference" linkFieldName="ID_Reference" displayFieldName="entitled" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Infratructure" caption="ID Infratructure" selectedFilterOperators="1589247">
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="CodeBarre" caption="Code Barre" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1589247">
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+                </ColumnPresentation>
+              </ColumnPresentations>
+              <Columns>
+                <List>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </List>
+                <View>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </View>
+                <Edit>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </Edit>
+                <Insert>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </Insert>
+                <QuickFilter>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </QuickFilter>
+                <FilterBuilder>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </FilterBuilder>
+                <Print>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </Print>
+                <Export>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </Export>
+                <Compare>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </Compare>
+              </Columns>
+              <Details/>
+              <RecordPermissions useRecordPermissions="false"/>
+              <PartitionNavigators/>
+            </Page>
+            <MasterForeignKeyColumnMap>
+              <FieldMap masterColumnName="ID_State" foreginColumnName="ID_State"/>
+            </MasterForeignKeyColumnMap>
+          </Detail>
+        </Details>
+        <RecordPermissions useRecordPermissions="false"/>
+        <PartitionNavigators/>
+      </Page>
+      <Page type="table" tableName="Inventaire.Person" numberByDataSource="0" fileName="Person" caption="Person" shortCaption="Person" addSeparator="false" horizontalFilterCondition="" openAdvancedSearchAtFirst="false" recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="1" deleteAbilityMode="3" deleteSelectedAbilityMode="3" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false">
+        <BeforeGridText/>
+        <DetailedDescription/>
+        <ColumnPresentations>
+          <ColumnPresentation fieldName="Name" caption="Name" showColumnFilter="false" selectedFilterOperators="1589247">
+            <ViewProperties type="text" maxLength="75"/>
+            <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="Email" caption="Email" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1589247">
+            <ViewProperties type="text" maxLength="75"/>
+            <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="ID_Person" caption="ID Person" showColumnFilter="false" selectedFilterOperators="1573119">
+            <ViewProperties type="text">
+              <Format type="number" thousandSeparator=","/>
+            </ViewProperties>
+            <EditProperties type="textBox" maxLength="0"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="First name" caption="First Name" showColumnFilter="false" selectedFilterOperators="1589247">
+            <ViewProperties type="text" maxLength="75"/>
+            <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="Phone" caption="Phone" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1589247">
+            <ViewProperties type="text" maxLength="75"/>
+            <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+          </ColumnPresentation>
+        </ColumnPresentations>
+        <Columns>
+          <List>
+            <Column fieldName="Name"/>
+            <Column fieldName="Email"/>
+            <Column fieldName="ID_Person"/>
+            <Column fieldName="First name"/>
+            <Column fieldName="Phone"/>
+          </List>
+          <View>
+            <Column fieldName="Name"/>
+            <Column fieldName="Email"/>
+            <Column fieldName="ID_Person"/>
+            <Column fieldName="First name"/>
+            <Column fieldName="Phone"/>
+          </View>
+          <Edit>
+            <Column fieldName="Name"/>
+            <Column fieldName="Email"/>
+            <Column fieldName="ID_Person" visible="false"/>
+            <Column fieldName="First name"/>
+            <Column fieldName="Phone"/>
+          </Edit>
+          <Insert>
+            <Column fieldName="Name"/>
+            <Column fieldName="Email"/>
+            <Column fieldName="ID_Person" visible="false"/>
+            <Column fieldName="First name"/>
+            <Column fieldName="Phone"/>
+          </Insert>
+          <QuickFilter>
+            <Column fieldName="Name"/>
+            <Column fieldName="Email"/>
+            <Column fieldName="ID_Person"/>
+            <Column fieldName="First name"/>
+            <Column fieldName="Phone"/>
+          </QuickFilter>
+          <FilterBuilder>
+            <Column fieldName="Name"/>
+            <Column fieldName="Email"/>
+            <Column fieldName="ID_Person"/>
+            <Column fieldName="First name"/>
+            <Column fieldName="Phone"/>
+          </FilterBuilder>
+          <Print>
+            <Column fieldName="Name"/>
+            <Column fieldName="Email"/>
+            <Column fieldName="ID_Person"/>
+            <Column fieldName="First name"/>
+            <Column fieldName="Phone"/>
+          </Print>
+          <Export>
+            <Column fieldName="Name"/>
+            <Column fieldName="Email"/>
+            <Column fieldName="ID_Person"/>
+            <Column fieldName="First name"/>
+            <Column fieldName="Phone"/>
+          </Export>
+          <Compare>
+            <Column fieldName="Name"/>
+            <Column fieldName="Email"/>
+            <Column fieldName="ID_Person" visible="false"/>
+            <Column fieldName="First name"/>
+            <Column fieldName="Phone"/>
+          </Compare>
+        </Columns>
+        <Details>
+          <Detail caption="Borrow">
+            <Page type="table" tableName="Inventaire.Borrow" numberByDataSource="0" fileName="Borrow" caption="Borrow" shortCaption="Borrow" addSeparator="false" horizontalFilterCondition="" openAdvancedSearchAtFirst="false" recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="1" deleteAbilityMode="3" deleteSelectedAbilityMode="3" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false">
+              <BeforeGridText/>
+              <DetailedDescription/>
+              <ColumnPresentations>
+                <ColumnPresentation fieldName="ID_Person" caption="ID Person" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.Person" linkFieldName="ID_Person" displayFieldName="Name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Borrow" caption="ID Borrow" showColumnFilter="false" selectedFilterOperators="1573119">
+                  <ViewProperties type="text">
+                    <Format type="number" thousandSeparator=","/>
+                  </ViewProperties>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Equipment" caption="ID Equipment" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.Equipment" linkFieldName="ID_Equipment" displayFieldName="Equipement_name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="Borrowing_hour" caption="Borrowing Hour" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1573119">
+                  <ViewProperties type="dateTime" dateTimeFormat="H:i:s" dateTimeKind="2"/>
+                  <EditProperties type="time"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="Borrowing_date" caption="Borrowing Date" canSetNull="true" selectedFilterOperators="2031871">
+                  <ViewProperties type="dateTime" dateTimeFormat="Y-m-d H:i:s"/>
+                  <EditProperties type="dateTime" dateTimeFormat="Y-m-d H:i:s" firstDayOfWeek="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="return_date" caption="Return Date" canSetNull="true" selectedFilterOperators="2031871">
+                  <ViewProperties type="dateTime" dateTimeFormat="Y-m-d H:i:s"/>
+                  <EditProperties type="dateTime" dateTimeFormat="Y-m-d H:i:s" firstDayOfWeek="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="Return_hour" caption="Return Hour" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1573119">
+                  <ViewProperties type="dateTime" dateTimeFormat="H:i:s" dateTimeKind="2"/>
+                  <EditProperties type="time"/>
+                </ColumnPresentation>
+              </ColumnPresentations>
+              <Columns>
+                <List>
+                  <Column fieldName="ID_Person"/>
+                  <Column fieldName="ID_Borrow"/>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Borrowing_hour"/>
+                  <Column fieldName="Borrowing_date"/>
+                  <Column fieldName="return_date"/>
+                  <Column fieldName="Return_hour"/>
+                </List>
+                <View>
+                  <Column fieldName="ID_Person"/>
+                  <Column fieldName="ID_Borrow"/>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Borrowing_hour"/>
+                  <Column fieldName="Borrowing_date"/>
+                  <Column fieldName="return_date"/>
+                  <Column fieldName="Return_hour"/>
+                </View>
+                <Edit>
+                  <Column fieldName="ID_Person"/>
+                  <Column fieldName="ID_Borrow" visible="false"/>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Borrowing_hour"/>
+                  <Column fieldName="Borrowing_date"/>
+                  <Column fieldName="return_date"/>
+                  <Column fieldName="Return_hour"/>
+                </Edit>
+                <Insert>
+                  <Column fieldName="ID_Person"/>
+                  <Column fieldName="ID_Borrow" visible="false"/>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Borrowing_hour"/>
+                  <Column fieldName="Borrowing_date"/>
+                  <Column fieldName="return_date"/>
+                  <Column fieldName="Return_hour"/>
+                </Insert>
+                <QuickFilter>
+                  <Column fieldName="ID_Person"/>
+                  <Column fieldName="ID_Borrow"/>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Borrowing_hour"/>
+                  <Column fieldName="Borrowing_date"/>
+                  <Column fieldName="return_date"/>
+                  <Column fieldName="Return_hour"/>
+                </QuickFilter>
+                <FilterBuilder>
+                  <Column fieldName="ID_Person"/>
+                  <Column fieldName="ID_Borrow"/>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Borrowing_hour"/>
+                  <Column fieldName="Borrowing_date"/>
+                  <Column fieldName="return_date"/>
+                  <Column fieldName="Return_hour"/>
+                </FilterBuilder>
+                <Print>
+                  <Column fieldName="ID_Person"/>
+                  <Column fieldName="ID_Borrow"/>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Borrowing_hour"/>
+                  <Column fieldName="Borrowing_date"/>
+                  <Column fieldName="return_date"/>
+                  <Column fieldName="Return_hour"/>
+                </Print>
+                <Export>
+                  <Column fieldName="ID_Person"/>
+                  <Column fieldName="ID_Borrow"/>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Borrowing_hour"/>
+                  <Column fieldName="Borrowing_date"/>
+                  <Column fieldName="return_date"/>
+                  <Column fieldName="Return_hour"/>
+                </Export>
+                <Compare>
+                  <Column fieldName="ID_Person"/>
+                  <Column fieldName="ID_Borrow" visible="false"/>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Borrowing_hour"/>
+                  <Column fieldName="Borrowing_date"/>
+                  <Column fieldName="return_date"/>
+                  <Column fieldName="Return_hour"/>
+                </Compare>
+              </Columns>
+              <Details/>
+              <RecordPermissions useRecordPermissions="false"/>
+              <PartitionNavigators/>
+            </Page>
+            <MasterForeignKeyColumnMap>
+              <FieldMap masterColumnName="ID_Person" foreginColumnName="ID_Person"/>
+            </MasterForeignKeyColumnMap>
+          </Detail>
+        </Details>
+        <RecordPermissions useRecordPermissions="false"/>
+        <PartitionNavigators/>
+      </Page>
+      <Page type="table" tableName="Inventaire.Sub-Category" numberByDataSource="0" fileName="Sub-Category" caption="Sub-Category" shortCaption="Sub-Category" addSeparator="false" horizontalFilterCondition="" openAdvancedSearchAtFirst="false" recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="1" deleteAbilityMode="3" deleteSelectedAbilityMode="3" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false">
+        <BeforeGridText/>
+        <DetailedDescription/>
+        <ColumnPresentations>
+          <ColumnPresentation fieldName="Sub-category_Name" caption="Sub-category Name" showColumnFilter="false" selectedFilterOperators="1589247">
+            <ViewProperties type="text" maxLength="75"/>
+            <EditProperties type="textBox" maxLength="0"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="ID_Sub-category" caption="ID Sub-category" showColumnFilter="false" selectedFilterOperators="1573119">
+            <ViewProperties type="text">
+              <Format type="number" thousandSeparator=","/>
+            </ViewProperties>
+            <EditProperties type="textBox" maxLength="0"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="ID_Category" caption="Category" selectedFilterOperators="1589247">
+            <Lookup tableName="Inventaire.Category" linkFieldName="ID_Category" displayFieldName="Category_Name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+            <ViewProperties type="text" maxLength="75"/>
+            <EditProperties type="comboBox"/>
+          </ColumnPresentation>
+        </ColumnPresentations>
+        <Columns>
+          <List>
+            <Column fieldName="Sub-category_Name"/>
+            <Column fieldName="ID_Sub-category"/>
+            <Column fieldName="ID_Category"/>
+          </List>
+          <View>
+            <Column fieldName="Sub-category_Name"/>
+            <Column fieldName="ID_Sub-category"/>
+            <Column fieldName="ID_Category"/>
+          </View>
+          <Edit>
+            <Column fieldName="Sub-category_Name"/>
+            <Column fieldName="ID_Sub-category" visible="false"/>
+            <Column fieldName="ID_Category"/>
+          </Edit>
+          <Insert>
+            <Column fieldName="Sub-category_Name"/>
+            <Column fieldName="ID_Sub-category" visible="false"/>
+            <Column fieldName="ID_Category"/>
+          </Insert>
+          <QuickFilter>
+            <Column fieldName="Sub-category_Name"/>
+            <Column fieldName="ID_Sub-category"/>
+            <Column fieldName="ID_Category"/>
+          </QuickFilter>
+          <FilterBuilder>
+            <Column fieldName="Sub-category_Name"/>
+            <Column fieldName="ID_Sub-category"/>
+            <Column fieldName="ID_Category"/>
+          </FilterBuilder>
+          <Print>
+            <Column fieldName="Sub-category_Name"/>
+            <Column fieldName="ID_Sub-category"/>
+            <Column fieldName="ID_Category"/>
+          </Print>
+          <Export>
+            <Column fieldName="Sub-category_Name"/>
+            <Column fieldName="ID_Sub-category"/>
+            <Column fieldName="ID_Category"/>
+          </Export>
+          <Compare>
+            <Column fieldName="Sub-category_Name"/>
+            <Column fieldName="ID_Sub-category" visible="false"/>
+            <Column fieldName="ID_Category"/>
+          </Compare>
+        </Columns>
+        <Details>
+          <Detail caption="Equipment">
+            <Page type="table" tableName="Inventaire.Equipment" numberByDataSource="0" fileName="Equipment" caption="Equipment" shortCaption="Equipment" addSeparator="false" horizontalFilterCondition="" openAdvancedSearchAtFirst="false" recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="1" deleteAbilityMode="3" deleteSelectedAbilityMode="3" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false">
+              <BeforeGridText/>
+              <DetailedDescription/>
+              <ColumnPresentations>
+                <ColumnPresentation fieldName="ID_Equipment" caption="ID Equipment" showColumnFilter="false" selectedFilterOperators="1573119">
+                  <ViewProperties type="text">
+                    <Format type="number" thousandSeparator=","/>
+                  </ViewProperties>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="Equipement_name" caption="Equipement Name" showColumnFilter="false" selectedFilterOperators="1589247">
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="Description" caption="Description" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1589247">
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Containing" caption="ID Containing" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1573119">
+                  <ViewProperties type="text">
+                    <Format type="number" thousandSeparator=","/>
+                  </ViewProperties>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Position" caption="ID Position" selectedFilterOperators="1573119">
+                  <ViewProperties type="dateTime" dateTimeKind="1"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Sub-category" caption="ID Sub-category" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.Sub-Category" linkFieldName="ID_Sub-category" displayFieldName="Sub-category_Name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_State" caption="ID State" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.State" linkFieldName="ID_State" displayFieldName="State_name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Reference" caption="ID Reference" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.Reference" linkFieldName="ID_Reference" displayFieldName="entitled" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Infratructure" caption="ID Infratructure" selectedFilterOperators="1589247">
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="CodeBarre" caption="Code Barre" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1589247">
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+                </ColumnPresentation>
+              </ColumnPresentations>
+              <Columns>
+                <List>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </List>
+                <View>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </View>
+                <Edit>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </Edit>
+                <Insert>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </Insert>
+                <QuickFilter>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </QuickFilter>
+                <FilterBuilder>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </FilterBuilder>
+                <Print>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </Print>
+                <Export>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </Export>
+                <Compare>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </Compare>
+              </Columns>
+              <Details/>
+              <RecordPermissions useRecordPermissions="false"/>
+              <PartitionNavigators/>
+            </Page>
+            <MasterForeignKeyColumnMap>
+              <FieldMap masterColumnName="ID_Sub-category" foreginColumnName="ID_Sub-category"/>
+            </MasterForeignKeyColumnMap>
+          </Detail>
+        </Details>
+        <RecordPermissions useRecordPermissions="false"/>
+        <PartitionNavigators/>
+      </Page>
+      <Page type="query" queryName="btn_code_barre" numberByDataSource="0" fileName="btn_code_barre" caption="Code Barre" shortCaption="Bar code" addSeparator="false" horizontalFilterCondition="" openAdvancedSearchAtFirst="false" recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="0" editAbilityMode="0" copyAbilityMode="0" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false">
+        <BeforeGridText/>
+        <DetailedDescription/>
+        <ColumnPresentations>
+          <ColumnPresentation fieldName="ID_Equipment" caption="ID Equipment" selectedFilterOperators="1589247">
+            <Lookup tableName="btn_code_barre" linkFieldName="ID_Equipment" displayFieldName="ID_Equipment" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+            <ViewProperties type="text"/>
+            <EditProperties type="comboBox"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="btn_codebarre" caption="Bar code" selectedFilterOperators="1589247">
+            <Lookup tableName="btn_code_barre" linkFieldName="btn_codebarre" displayFieldName="btn_codebarre" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+            <ViewProperties type="text"/>
+            <EditProperties type="comboBox"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="Equipement_name" caption="Equipement Name" selectedFilterOperators="1589247">
+            <Lookup tableName="btn_code_barre" linkFieldName="Equipement_name" displayFieldName="Equipement_name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+            <ViewProperties type="text"/>
+            <EditProperties type="comboBox"/>
+          </ColumnPresentation>
+        </ColumnPresentations>
+        <Columns>
+          <List>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="btn_codebarre"/>
+            <Column fieldName="Equipement_name"/>
+          </List>
+          <View>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="btn_codebarre"/>
+            <Column fieldName="Equipement_name"/>
+          </View>
+          <Edit>
+            <Column fieldName="ID_Equipment" visible="false"/>
+            <Column fieldName="btn_codebarre"/>
+            <Column fieldName="Equipement_name"/>
+          </Edit>
+          <Insert>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="btn_codebarre"/>
+            <Column fieldName="Equipement_name"/>
+          </Insert>
+          <QuickFilter>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="btn_codebarre"/>
+            <Column fieldName="Equipement_name"/>
+          </QuickFilter>
+          <FilterBuilder>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="btn_codebarre"/>
+            <Column fieldName="Equipement_name"/>
+          </FilterBuilder>
+          <Print>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="btn_codebarre"/>
+            <Column fieldName="Equipement_name"/>
+          </Print>
+          <Export>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="btn_codebarre"/>
+            <Column fieldName="Equipement_name"/>
+          </Export>
+          <Compare>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="btn_codebarre"/>
+            <Column fieldName="Equipement_name"/>
+          </Compare>
+        </Columns>
+        <Details/>
+        <EventHandlers>
+          <CustomRenderColumnHandlerText enabled="true">
+if ($fieldName == 'btn_codebarre')
+{
+     $customText = 
+     '&lt;script type=&quot;text/javascript&quot; src=&quot;components/js/qrcode.js&quot;&gt;&lt;/script&gt;' .
+    //'&lt;div id=&quot;qrcode&quot;&gt;' .
+    '&lt;input type=&quot;text&quot; value=&quot;' .$fieldData. '&quot; style=&quot;width:80%; display:none&quot; /&gt;&lt;br /&gt;' .
+    '&lt;div id=&quot;qrcode&quot;&gt;&lt;/div&gt;' .
+      '&lt;button id=&quot;button&quot; onclick=&quot;makeCode(' .$fieldData. ')&quot;&gt;Create a QR code&lt;/button&gt;' .
+    '&lt;/div&gt;';  
+  $handled = true; 
+}          </CustomRenderColumnHandlerText>
+        </EventHandlers>
+        <RecordPermissions useRecordPermissions="false"/>
+        <PartitionNavigators/>
+      </Page>
+      <Page type="table" tableName="Inventaire.Equipment" numberByDataSource="0" fileName="Equipment" caption="Equipment" shortCaption="Equipment" addSeparator="false" horizontalFilterCondition="" openAdvancedSearchAtFirst="false" recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="1" deleteAbilityMode="3" deleteSelectedAbilityMode="3" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false">
+        <BeforeGridText/>
+        <DetailedDescription/>
+        <ColumnPresentations>
+          <ColumnPresentation fieldName="ID_Equipment" caption="ID Equipment" showColumnFilter="false" selectedFilterOperators="1573119">
+            <ViewProperties type="text">
+              <Format type="number" thousandSeparator=","/>
+            </ViewProperties>
+            <EditProperties type="textBox" maxLength="0"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="Equipement_name" caption="Equipement Name" showColumnFilter="false" selectedFilterOperators="1589247">
+            <ViewProperties type="text" maxLength="75"/>
+            <EditProperties type="textBox" maxLength="0"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="Description" caption="Description" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1589247">
+            <ViewProperties type="text" maxLength="75"/>
+            <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="ID_Containing" caption="ID Containing" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1573119">
+            <ViewProperties type="text">
+              <Format type="number" thousandSeparator=","/>
+            </ViewProperties>
+            <EditProperties type="comboBox"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="ID_Position" caption="ID Position" selectedFilterOperators="1573119">
+            <Lookup tableName="Inventaire.Position" linkFieldName="ID_Position" displayFieldName="ID_Position" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+            <ViewProperties type="text">
+              <Format type="number" numberAfterDecimal="2" decimalSeparator="." thousandSeparator=","/>
+            </ViewProperties>
+            <EditProperties type="comboBox"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="ID_Sub-category" caption="ID Sub-category" selectedFilterOperators="1589247">
+            <Lookup tableName="Inventaire.Sub-Category" linkFieldName="ID_Sub-category" displayFieldName="Sub-category_Name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+            <ViewProperties type="text" maxLength="75"/>
+            <EditProperties type="comboBox"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="ID_State" caption="ID State" selectedFilterOperators="1589247">
+            <Lookup tableName="Inventaire.State" linkFieldName="ID_State" displayFieldName="State_name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+            <ViewProperties type="text" maxLength="75"/>
+            <EditProperties type="comboBox"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="ID_Reference" caption="ID Reference" selectedFilterOperators="1589247">
+            <Lookup tableName="Inventaire.Reference" linkFieldName="ID_Reference" displayFieldName="entitled" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+            <ViewProperties type="text" maxLength="75"/>
+            <EditProperties type="textBox" maxLength="0"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="ID_Infratructure" caption="ID Infratructure" selectedFilterOperators="1589247">
+            <Lookup tableName="Inventaire.Infrastructure" linkFieldName="ID_Infrastructure" displayFieldName="Infrastructure_name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+            <ViewProperties type="text" maxLength="75"/>
+            <EditProperties type="comboBox"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="CodeBarre" caption="Code Barre" canSetNull="true" selectedFilterOperators="1589247">
+            <ViewProperties type="text" maxLength="75"/>
+            <EditProperties type="textBox" maxLength="0"/>
+          </ColumnPresentation>
+        </ColumnPresentations>
+        <Columns>
+          <List>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="Equipement_name"/>
+            <Column fieldName="Description"/>
+            <Column fieldName="ID_Containing"/>
+            <Column fieldName="ID_Position"/>
+            <Column fieldName="ID_Sub-category"/>
+            <Column fieldName="ID_State"/>
+            <Column fieldName="ID_Reference"/>
+            <Column fieldName="ID_Infratructure"/>
+            <Column fieldName="CodeBarre"/>
+          </List>
+          <View>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="Equipement_name"/>
+            <Column fieldName="Description"/>
+            <Column fieldName="ID_Containing"/>
+            <Column fieldName="ID_Position"/>
+            <Column fieldName="ID_Sub-category"/>
+            <Column fieldName="ID_State"/>
+            <Column fieldName="ID_Reference"/>
+            <Column fieldName="ID_Infratructure"/>
+            <Column fieldName="CodeBarre"/>
+          </View>
+          <Edit>
+            <Column fieldName="ID_Equipment" visible="false"/>
+            <Column fieldName="Equipement_name"/>
+            <Column fieldName="Description"/>
+            <Column fieldName="ID_Containing"/>
+            <Column fieldName="ID_Position"/>
+            <Column fieldName="ID_Sub-category"/>
+            <Column fieldName="ID_State"/>
+            <Column fieldName="ID_Reference"/>
+            <Column fieldName="ID_Infratructure"/>
+            <Column fieldName="CodeBarre"/>
+          </Edit>
+          <Insert>
+            <Column fieldName="ID_Equipment" visible="false"/>
+            <Column fieldName="Equipement_name"/>
+            <Column fieldName="Description"/>
+            <Column fieldName="ID_Containing"/>
+            <Column fieldName="ID_Position"/>
+            <Column fieldName="ID_Sub-category"/>
+            <Column fieldName="ID_State"/>
+            <Column fieldName="ID_Reference"/>
+            <Column fieldName="ID_Infratructure"/>
+            <Column fieldName="CodeBarre"/>
+          </Insert>
+          <QuickFilter>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="Equipement_name"/>
+            <Column fieldName="Description"/>
+            <Column fieldName="ID_Containing"/>
+            <Column fieldName="ID_Position"/>
+            <Column fieldName="ID_Sub-category"/>
+            <Column fieldName="ID_State"/>
+            <Column fieldName="ID_Reference"/>
+            <Column fieldName="ID_Infratructure"/>
+            <Column fieldName="CodeBarre"/>
+          </QuickFilter>
+          <FilterBuilder>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="Equipement_name"/>
+            <Column fieldName="Description"/>
+            <Column fieldName="ID_Containing"/>
+            <Column fieldName="ID_Position"/>
+            <Column fieldName="ID_Sub-category"/>
+            <Column fieldName="ID_State"/>
+            <Column fieldName="ID_Reference"/>
+            <Column fieldName="ID_Infratructure"/>
+            <Column fieldName="CodeBarre"/>
+          </FilterBuilder>
+          <Print>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="Equipement_name"/>
+            <Column fieldName="Description"/>
+            <Column fieldName="ID_Containing"/>
+            <Column fieldName="ID_Position"/>
+            <Column fieldName="ID_Sub-category"/>
+            <Column fieldName="ID_State"/>
+            <Column fieldName="ID_Reference"/>
+            <Column fieldName="ID_Infratructure"/>
+            <Column fieldName="CodeBarre"/>
+          </Print>
+          <Export>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="Equipement_name"/>
+            <Column fieldName="Description"/>
+            <Column fieldName="ID_Containing"/>
+            <Column fieldName="ID_Position"/>
+            <Column fieldName="ID_Sub-category"/>
+            <Column fieldName="ID_State"/>
+            <Column fieldName="ID_Reference"/>
+            <Column fieldName="ID_Infratructure"/>
+            <Column fieldName="CodeBarre"/>
+          </Export>
+          <Compare>
+            <Column fieldName="ID_Equipment"/>
+            <Column fieldName="Equipement_name"/>
+            <Column fieldName="Description"/>
+            <Column fieldName="ID_Containing"/>
+            <Column fieldName="ID_Position"/>
+            <Column fieldName="ID_Sub-category"/>
+            <Column fieldName="ID_State"/>
+            <Column fieldName="ID_Reference"/>
+            <Column fieldName="ID_Infratructure"/>
+            <Column fieldName="CodeBarre"/>
+          </Compare>
+        </Columns>
+        <Details>
+          <Detail caption="Borrow">
+            <Page type="table" tableName="Inventaire.Borrow" numberByDataSource="0" fileName="Borrow" caption="Borrow" shortCaption="Borrow" addSeparator="false" horizontalFilterCondition="" openAdvancedSearchAtFirst="false" recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="1" deleteAbilityMode="3" deleteSelectedAbilityMode="3" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false">
+              <BeforeGridText/>
+              <DetailedDescription/>
+              <ColumnPresentations>
+                <ColumnPresentation fieldName="ID_Person" caption="ID Person" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.Person" linkFieldName="ID_Person" displayFieldName="Name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Borrow" caption="ID Borrow" showColumnFilter="false" selectedFilterOperators="1573119">
+                  <ViewProperties type="text">
+                    <Format type="number" thousandSeparator=","/>
+                  </ViewProperties>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Equipment" caption="ID Equipment" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.Equipment" linkFieldName="ID_Equipment" displayFieldName="Equipement_name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="Borrowing_hour" caption="Borrowing Hour" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1573119">
+                  <ViewProperties type="dateTime" dateTimeFormat="H:i:s" dateTimeKind="2"/>
+                  <EditProperties type="time"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="Borrowing_date" caption="Borrowing Date" canSetNull="true" selectedFilterOperators="2031871">
+                  <ViewProperties type="dateTime" dateTimeFormat="Y-m-d H:i:s"/>
+                  <EditProperties type="dateTime" dateTimeFormat="Y-m-d H:i:s" firstDayOfWeek="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="return_date" caption="Return Date" canSetNull="true" selectedFilterOperators="2031871">
+                  <ViewProperties type="dateTime" dateTimeFormat="Y-m-d H:i:s"/>
+                  <EditProperties type="dateTime" dateTimeFormat="Y-m-d H:i:s" firstDayOfWeek="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="Return_hour" caption="Return Hour" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1573119">
+                  <ViewProperties type="dateTime" dateTimeFormat="H:i:s" dateTimeKind="2"/>
+                  <EditProperties type="time"/>
+                </ColumnPresentation>
+              </ColumnPresentations>
+              <Columns>
+                <List>
+                  <Column fieldName="ID_Person"/>
+                  <Column fieldName="ID_Borrow"/>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Borrowing_hour"/>
+                  <Column fieldName="Borrowing_date"/>
+                  <Column fieldName="return_date"/>
+                  <Column fieldName="Return_hour"/>
+                </List>
+                <View>
+                  <Column fieldName="ID_Person"/>
+                  <Column fieldName="ID_Borrow"/>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Borrowing_hour"/>
+                  <Column fieldName="Borrowing_date"/>
+                  <Column fieldName="return_date"/>
+                  <Column fieldName="Return_hour"/>
+                </View>
+                <Edit>
+                  <Column fieldName="ID_Person"/>
+                  <Column fieldName="ID_Borrow" visible="false"/>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Borrowing_hour"/>
+                  <Column fieldName="Borrowing_date"/>
+                  <Column fieldName="return_date"/>
+                  <Column fieldName="Return_hour"/>
+                </Edit>
+                <Insert>
+                  <Column fieldName="ID_Person"/>
+                  <Column fieldName="ID_Borrow" visible="false"/>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Borrowing_hour"/>
+                  <Column fieldName="Borrowing_date"/>
+                  <Column fieldName="return_date"/>
+                  <Column fieldName="Return_hour"/>
+                </Insert>
+                <QuickFilter>
+                  <Column fieldName="ID_Person"/>
+                  <Column fieldName="ID_Borrow"/>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Borrowing_hour"/>
+                  <Column fieldName="Borrowing_date"/>
+                  <Column fieldName="return_date"/>
+                  <Column fieldName="Return_hour"/>
+                </QuickFilter>
+                <FilterBuilder>
+                  <Column fieldName="ID_Person"/>
+                  <Column fieldName="ID_Borrow"/>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Borrowing_hour"/>
+                  <Column fieldName="Borrowing_date"/>
+                  <Column fieldName="return_date"/>
+                  <Column fieldName="Return_hour"/>
+                </FilterBuilder>
+                <Print>
+                  <Column fieldName="ID_Person"/>
+                  <Column fieldName="ID_Borrow"/>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Borrowing_hour"/>
+                  <Column fieldName="Borrowing_date"/>
+                  <Column fieldName="return_date"/>
+                  <Column fieldName="Return_hour"/>
+                </Print>
+                <Export>
+                  <Column fieldName="ID_Person"/>
+                  <Column fieldName="ID_Borrow"/>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Borrowing_hour"/>
+                  <Column fieldName="Borrowing_date"/>
+                  <Column fieldName="return_date"/>
+                  <Column fieldName="Return_hour"/>
+                </Export>
+                <Compare>
+                  <Column fieldName="ID_Person"/>
+                  <Column fieldName="ID_Borrow" visible="false"/>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Borrowing_hour"/>
+                  <Column fieldName="Borrowing_date"/>
+                  <Column fieldName="return_date"/>
+                  <Column fieldName="Return_hour"/>
+                </Compare>
+              </Columns>
+              <Details/>
+              <RecordPermissions useRecordPermissions="false"/>
+              <PartitionNavigators/>
+            </Page>
+            <MasterForeignKeyColumnMap>
+              <FieldMap masterColumnName="ID_Equipment" foreginColumnName="ID_Equipment"/>
+            </MasterForeignKeyColumnMap>
+          </Detail>
+          <Detail caption="Contains">
+            <Page type="table" tableName="Inventaire.Contains" numberByDataSource="0" fileName="Contains" caption="Contains" shortCaption="Contains" addSeparator="false" horizontalFilterCondition="" openAdvancedSearchAtFirst="false" recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="1" deleteAbilityMode="3" deleteSelectedAbilityMode="3" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false">
+              <BeforeGridText/>
+              <DetailedDescription/>
+              <ColumnPresentations>
+                <ColumnPresentation fieldName="id" caption="Id" showColumnFilter="false" selectedFilterOperators="1573119">
+                  <ViewProperties type="text">
+                    <Format type="number" thousandSeparator=","/>
+                  </ViewProperties>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="id_Equipment_Contains" caption="Id Equipment Contains" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.Equipment" linkFieldName="ID_Equipment" displayFieldName="Equipement_name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="id_Equipment_Contents" caption="Id Equipment Contents" canSetNull="true" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.Equipment" linkFieldName="ID_Equipment" displayFieldName="Equipement_name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+              </ColumnPresentations>
+              <Columns>
+                <List>
+                  <Column fieldName="id"/>
+                  <Column fieldName="id_Equipment_Contains"/>
+                  <Column fieldName="id_Equipment_Contents"/>
+                </List>
+                <View>
+                  <Column fieldName="id"/>
+                  <Column fieldName="id_Equipment_Contains"/>
+                  <Column fieldName="id_Equipment_Contents"/>
+                </View>
+                <Edit>
+                  <Column fieldName="id"/>
+                  <Column fieldName="id_Equipment_Contains"/>
+                  <Column fieldName="id_Equipment_Contents"/>
+                </Edit>
+                <Insert>
+                  <Column fieldName="id"/>
+                  <Column fieldName="id_Equipment_Contains"/>
+                  <Column fieldName="id_Equipment_Contents"/>
+                </Insert>
+                <QuickFilter>
+                  <Column fieldName="id"/>
+                  <Column fieldName="id_Equipment_Contains"/>
+                  <Column fieldName="id_Equipment_Contents"/>
+                </QuickFilter>
+                <FilterBuilder>
+                  <Column fieldName="id"/>
+                  <Column fieldName="id_Equipment_Contains"/>
+                  <Column fieldName="id_Equipment_Contents"/>
+                </FilterBuilder>
+                <Print>
+                  <Column fieldName="id"/>
+                  <Column fieldName="id_Equipment_Contains"/>
+                  <Column fieldName="id_Equipment_Contents"/>
+                </Print>
+                <Export>
+                  <Column fieldName="id"/>
+                  <Column fieldName="id_Equipment_Contains"/>
+                  <Column fieldName="id_Equipment_Contents"/>
+                </Export>
+                <Compare>
+                  <Column fieldName="id"/>
+                  <Column fieldName="id_Equipment_Contains"/>
+                  <Column fieldName="id_Equipment_Contents"/>
+                </Compare>
+              </Columns>
+              <Details/>
+              <RecordPermissions useRecordPermissions="false"/>
+              <PartitionNavigators/>
+            </Page>
+            <MasterForeignKeyColumnMap>
+              <FieldMap masterColumnName="ID_Equipment" foreginColumnName="id_Equipment_Contains"/>
+            </MasterForeignKeyColumnMap>
+          </Detail>
+          <Detail caption="Contains">
+            <Page type="table" tableName="Inventaire.Contains" numberByDataSource="1" fileName="Contains" caption="Contains" shortCaption="Contains" addSeparator="false" horizontalFilterCondition="" openAdvancedSearchAtFirst="false" recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="1" deleteAbilityMode="3" deleteSelectedAbilityMode="3" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false">
+              <BeforeGridText/>
+              <DetailedDescription/>
+              <ColumnPresentations>
+                <ColumnPresentation fieldName="id" caption="Id" showColumnFilter="false" selectedFilterOperators="1573119">
+                  <ViewProperties type="text">
+                    <Format type="number" thousandSeparator=","/>
+                  </ViewProperties>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="id_Equipment_Contains" caption="Id Equipment Contains" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.Equipment" linkFieldName="ID_Equipment" displayFieldName="Equipement_name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="id_Equipment_Contents" caption="Id Equipment Contents" canSetNull="true" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.Equipment" linkFieldName="ID_Equipment" displayFieldName="Equipement_name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+              </ColumnPresentations>
+              <Columns>
+                <List>
+                  <Column fieldName="id"/>
+                  <Column fieldName="id_Equipment_Contains"/>
+                  <Column fieldName="id_Equipment_Contents"/>
+                </List>
+                <View>
+                  <Column fieldName="id"/>
+                  <Column fieldName="id_Equipment_Contains"/>
+                  <Column fieldName="id_Equipment_Contents"/>
+                </View>
+                <Edit>
+                  <Column fieldName="id"/>
+                  <Column fieldName="id_Equipment_Contains"/>
+                  <Column fieldName="id_Equipment_Contents"/>
+                </Edit>
+                <Insert>
+                  <Column fieldName="id"/>
+                  <Column fieldName="id_Equipment_Contains"/>
+                  <Column fieldName="id_Equipment_Contents"/>
+                </Insert>
+                <QuickFilter>
+                  <Column fieldName="id"/>
+                  <Column fieldName="id_Equipment_Contains"/>
+                  <Column fieldName="id_Equipment_Contents"/>
+                </QuickFilter>
+                <FilterBuilder>
+                  <Column fieldName="id"/>
+                  <Column fieldName="id_Equipment_Contains"/>
+                  <Column fieldName="id_Equipment_Contents"/>
+                </FilterBuilder>
+                <Print>
+                  <Column fieldName="id"/>
+                  <Column fieldName="id_Equipment_Contains"/>
+                  <Column fieldName="id_Equipment_Contents"/>
+                </Print>
+                <Export>
+                  <Column fieldName="id"/>
+                  <Column fieldName="id_Equipment_Contains"/>
+                  <Column fieldName="id_Equipment_Contents"/>
+                </Export>
+                <Compare>
+                  <Column fieldName="id"/>
+                  <Column fieldName="id_Equipment_Contains"/>
+                  <Column fieldName="id_Equipment_Contents"/>
+                </Compare>
+              </Columns>
+              <Details/>
+              <RecordPermissions useRecordPermissions="false"/>
+              <PartitionNavigators/>
+            </Page>
+            <MasterForeignKeyColumnMap>
+              <FieldMap masterColumnName="ID_Equipment" foreginColumnName="id_Equipment_Contents"/>
+            </MasterForeignKeyColumnMap>
+          </Detail>
+        </Details>
+        <EventHandlers>
+          <CustomRenderColumnHandlerText enabled="false">
+if ($fieldName == 'btn_codebarre')
+{
+     $customText =  
+    '&lt;div&gt;' .
+      '&lt;input type=&quot;button&quot; value=&quot;Cliquer&quot;/&gt;' .
+      '&amp;nbsp;' . $fieldData .
+    '&lt;/div&gt;';
+     $handled = true;
+}          </CustomRenderColumnHandlerText>
+        </EventHandlers>
+        <RecordPermissions useRecordPermissions="false"/>
+        <PartitionNavigators/>
+      </Page>
+      <Page type="table" tableName="Inventaire.Infrastructure" numberByDataSource="0" fileName="Infrastructure" caption="Infrastructure" shortCaption="Infrastructure" addSeparator="false" horizontalFilterCondition="" openAdvancedSearchAtFirst="false" recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="1" deleteAbilityMode="3" deleteSelectedAbilityMode="3" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false">
+        <BeforeGridText/>
+        <DetailedDescription/>
+        <ColumnPresentations>
+          <ColumnPresentation fieldName="ID_Infrastructure" caption="ID Infrastructure" showColumnFilter="false" selectedFilterOperators="1573119">
+            <ViewProperties type="text">
+              <Format type="number" thousandSeparator=","/>
+            </ViewProperties>
+            <EditProperties type="textBox" maxLength="0"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="Infrastructure_name" caption="Infrastructure Name" canSetNull="true" selectedFilterOperators="1589247">
+            <ViewProperties type="text" maxLength="75"/>
+            <EditProperties type="textBox" maxLength="0"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="ID_Position" caption="Platform" canSetNull="true" selectedFilterOperators="1573119">
+            <ViewProperties type="text"/>
+            <EditProperties type="comboBox"/>
+          </ColumnPresentation>
+        </ColumnPresentations>
+        <Columns>
+          <List>
+            <Column fieldName="ID_Infrastructure"/>
+            <Column fieldName="Infrastructure_name"/>
+            <Column fieldName="ID_Position"/>
+          </List>
+          <View>
+            <Column fieldName="ID_Infrastructure"/>
+            <Column fieldName="Infrastructure_name"/>
+            <Column fieldName="ID_Position"/>
+          </View>
+          <Edit>
+            <Column fieldName="ID_Infrastructure" visible="false"/>
+            <Column fieldName="Infrastructure_name"/>
+            <Column fieldName="ID_Position"/>
+          </Edit>
+          <Insert>
+            <Column fieldName="ID_Infrastructure" visible="false"/>
+            <Column fieldName="Infrastructure_name"/>
+            <Column fieldName="ID_Position"/>
+          </Insert>
+          <QuickFilter>
+            <Column fieldName="ID_Infrastructure"/>
+            <Column fieldName="Infrastructure_name"/>
+            <Column fieldName="ID_Position"/>
+          </QuickFilter>
+          <FilterBuilder>
+            <Column fieldName="ID_Infrastructure"/>
+            <Column fieldName="Infrastructure_name"/>
+            <Column fieldName="ID_Position"/>
+          </FilterBuilder>
+          <Print>
+            <Column fieldName="ID_Infrastructure"/>
+            <Column fieldName="Infrastructure_name"/>
+            <Column fieldName="ID_Position"/>
+          </Print>
+          <Export>
+            <Column fieldName="ID_Infrastructure"/>
+            <Column fieldName="Infrastructure_name"/>
+            <Column fieldName="ID_Position"/>
+          </Export>
+          <Compare>
+            <Column fieldName="ID_Infrastructure" visible="false"/>
+            <Column fieldName="Infrastructure_name"/>
+            <Column fieldName="ID_Position"/>
+          </Compare>
+        </Columns>
+        <Details>
+          <Detail caption="Equipment">
+            <Page type="table" tableName="Inventaire.Equipment" numberByDataSource="0" fileName="Equipment" caption="Equipment" shortCaption="Equipment" addSeparator="false" horizontalFilterCondition="" openAdvancedSearchAtFirst="false" recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="1" deleteAbilityMode="3" deleteSelectedAbilityMode="3" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false">
+              <BeforeGridText/>
+              <DetailedDescription/>
+              <ColumnPresentations>
+                <ColumnPresentation fieldName="ID_Equipment" caption="ID Equipment" showColumnFilter="false" selectedFilterOperators="1573119">
+                  <ViewProperties type="text">
+                    <Format type="number" thousandSeparator=","/>
+                  </ViewProperties>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="Equipement_name" caption="Equipement Name" showColumnFilter="false" selectedFilterOperators="1589247">
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="Description" caption="Description" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1589247">
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Containing" caption="ID Containing" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1573119">
+                  <ViewProperties type="text">
+                    <Format type="number" thousandSeparator=","/>
+                  </ViewProperties>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Position" caption="ID Position" selectedFilterOperators="1573119">
+                  <ViewProperties type="dateTime" dateTimeKind="1"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Sub-category" caption="ID Sub-category" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.Sub-Category" linkFieldName="ID_Sub-category" displayFieldName="Sub-category_Name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_State" caption="ID State" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.State" linkFieldName="ID_State" displayFieldName="State_name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Reference" caption="ID Reference" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.Reference" linkFieldName="ID_Reference" displayFieldName="entitled" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Infratructure" caption="ID Infratructure" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.Infrastructure" linkFieldName="ID_Infrastructure" displayFieldName="Infrastructure_name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="CodeBarre" caption="Code Barre" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1589247">
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+                </ColumnPresentation>
+              </ColumnPresentations>
+              <Columns>
+                <List>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </List>
+                <View>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </View>
+                <Edit>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </Edit>
+                <Insert>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </Insert>
+                <QuickFilter>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </QuickFilter>
+                <FilterBuilder>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </FilterBuilder>
+                <Print>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </Print>
+                <Export>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </Export>
+                <Compare>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </Compare>
+              </Columns>
+              <Details/>
+              <RecordPermissions useRecordPermissions="false"/>
+              <PartitionNavigators/>
+            </Page>
+            <MasterForeignKeyColumnMap>
+              <FieldMap masterColumnName="ID_Infrastructure" foreginColumnName="ID_Infratructure"/>
+            </MasterForeignKeyColumnMap>
+          </Detail>
+        </Details>
+        <RecordPermissions useRecordPermissions="false"/>
+        <PartitionNavigators/>
+      </Page>
+      <Page type="table" tableName="Inventaire.Position" numberByDataSource="0" fileName="Position" caption="Position" shortCaption="Position" addSeparator="false" horizontalFilterCondition="" openAdvancedSearchAtFirst="false" recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="1" deleteAbilityMode="3" deleteSelectedAbilityMode="3" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false">
+        <BeforeGridText/>
+        <DetailedDescription/>
+        <ColumnPresentations>
+          <ColumnPresentation fieldName="ID_Position" caption="ID Position" selectedFilterOperators="1573119">
+            <Lookup tableName="Inventaire.Position" linkFieldName="ID_Position" displayFieldName="ID_Position" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+            <ViewProperties type="text">
+              <Format type="number" thousandSeparator=","/>
+            </ViewProperties>
+            <EditProperties type="comboBox"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="date" caption="Date" selectedFilterOperators="2031871">
+            <ViewProperties type="dateTime" dateTimeKind="1"/>
+            <EditProperties type="dateTime" dateTimeFormat="Y-m-d" dateTimeKind="1" firstDayOfWeek="0"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="longitude" caption="Longitude" showColumnFilter="false" selectedFilterOperators="1573119">
+            <ViewProperties type="text">
+              <Format type="number" numberAfterDecimal="4" decimalSeparator="." thousandSeparator=","/>
+            </ViewProperties>
+            <EditProperties type="textBox" maxLength="0"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="latitude" caption="Latitude" showColumnFilter="false" selectedFilterOperators="1573119">
+            <ViewProperties type="text">
+              <Format type="number" numberAfterDecimal="4" decimalSeparator="." thousandSeparator=","/>
+            </ViewProperties>
+            <EditProperties type="textBox" maxLength="0"/>
+          </ColumnPresentation>
+          <ColumnPresentation fieldName="Place" caption="Place" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1589247">
+            <ViewProperties type="text" maxLength="75"/>
+            <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+          </ColumnPresentation>
+        </ColumnPresentations>
+        <Columns>
+          <List>
+            <Column fieldName="ID_Position"/>
+            <Column fieldName="date"/>
+            <Column fieldName="longitude"/>
+            <Column fieldName="latitude"/>
+            <Column fieldName="Place"/>
+          </List>
+          <View>
+            <Column fieldName="ID_Position"/>
+            <Column fieldName="date"/>
+            <Column fieldName="longitude"/>
+            <Column fieldName="latitude"/>
+            <Column fieldName="Place"/>
+          </View>
+          <Edit>
+            <Column fieldName="ID_Position" visible="false"/>
+            <Column fieldName="date"/>
+            <Column fieldName="longitude"/>
+            <Column fieldName="latitude"/>
+            <Column fieldName="Place"/>
+          </Edit>
+          <Insert>
+            <Column fieldName="ID_Position" visible="false"/>
+            <Column fieldName="date"/>
+            <Column fieldName="longitude"/>
+            <Column fieldName="latitude"/>
+            <Column fieldName="Place"/>
+          </Insert>
+          <QuickFilter>
+            <Column fieldName="ID_Position"/>
+            <Column fieldName="date"/>
+            <Column fieldName="longitude"/>
+            <Column fieldName="latitude"/>
+            <Column fieldName="Place"/>
+          </QuickFilter>
+          <FilterBuilder>
+            <Column fieldName="ID_Position"/>
+            <Column fieldName="date"/>
+            <Column fieldName="longitude"/>
+            <Column fieldName="latitude"/>
+            <Column fieldName="Place"/>
+          </FilterBuilder>
+          <Print>
+            <Column fieldName="ID_Position"/>
+            <Column fieldName="date"/>
+            <Column fieldName="longitude"/>
+            <Column fieldName="latitude"/>
+            <Column fieldName="Place"/>
+          </Print>
+          <Export>
+            <Column fieldName="ID_Position"/>
+            <Column fieldName="date"/>
+            <Column fieldName="longitude"/>
+            <Column fieldName="latitude"/>
+            <Column fieldName="Place"/>
+          </Export>
+          <Compare>
+            <Column fieldName="ID_Position" visible="false"/>
+            <Column fieldName="date"/>
+            <Column fieldName="longitude"/>
+            <Column fieldName="latitude"/>
+            <Column fieldName="Place"/>
+          </Compare>
+        </Columns>
+        <Details>
+          <Detail caption="Equipment">
+            <Page type="table" tableName="Inventaire.Equipment" numberByDataSource="0" fileName="Equipment" caption="Equipment" shortCaption="Equipment" addSeparator="false" horizontalFilterCondition="" openAdvancedSearchAtFirst="false" recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="1" deleteAbilityMode="3" deleteSelectedAbilityMode="3" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false">
+              <BeforeGridText/>
+              <DetailedDescription/>
+              <ColumnPresentations>
+                <ColumnPresentation fieldName="ID_Equipment" caption="ID Equipment" showColumnFilter="false" selectedFilterOperators="1573119">
+                  <ViewProperties type="text">
+                    <Format type="number" thousandSeparator=","/>
+                  </ViewProperties>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="Equipement_name" caption="Equipement Name" showColumnFilter="false" selectedFilterOperators="1589247">
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="Description" caption="Description" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1589247">
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Containing" caption="ID Containing" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1573119">
+                  <ViewProperties type="text">
+                    <Format type="number" thousandSeparator=","/>
+                  </ViewProperties>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Position" caption="ID Position" selectedFilterOperators="2031871">
+                  <Lookup tableName="Inventaire.Position" linkFieldName="ID_Position" displayFieldName="date" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="dateTime" dateTimeKind="1"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Sub-category" caption="ID Sub-category" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.Sub-Category" linkFieldName="ID_Sub-category" displayFieldName="Sub-category_Name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_State" caption="ID State" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.State" linkFieldName="ID_State" displayFieldName="State_name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Reference" caption="ID Reference" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.Reference" linkFieldName="ID_Reference" displayFieldName="entitled" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Infratructure" caption="ID Infratructure" selectedFilterOperators="1589247">
+                  <Lookup tableName="Inventaire.Infrastructure" linkFieldName="ID_Infrastructure" displayFieldName="Infrastructure_name" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="CodeBarre" caption="Code Barre" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1589247">
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+                </ColumnPresentation>
+              </ColumnPresentations>
+              <Columns>
+                <List>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </List>
+                <View>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </View>
+                <Edit>
+                  <Column fieldName="ID_Equipment" visible="false"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </Edit>
+                <Insert>
+                  <Column fieldName="ID_Equipment" visible="false"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </Insert>
+                <QuickFilter>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </QuickFilter>
+                <FilterBuilder>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </FilterBuilder>
+                <Print>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </Print>
+                <Export>
+                  <Column fieldName="ID_Equipment"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </Export>
+                <Compare>
+                  <Column fieldName="ID_Equipment" visible="false"/>
+                  <Column fieldName="Equipement_name"/>
+                  <Column fieldName="Description"/>
+                  <Column fieldName="ID_Containing"/>
+                  <Column fieldName="ID_Position"/>
+                  <Column fieldName="ID_Sub-category"/>
+                  <Column fieldName="ID_State"/>
+                  <Column fieldName="ID_Reference"/>
+                  <Column fieldName="ID_Infratructure"/>
+                  <Column fieldName="CodeBarre"/>
+                </Compare>
+              </Columns>
+              <Details/>
+              <RecordPermissions useRecordPermissions="false"/>
+              <PartitionNavigators/>
+            </Page>
+            <MasterForeignKeyColumnMap>
+              <FieldMap masterColumnName="ID_Position" foreginColumnName="ID_Position"/>
+            </MasterForeignKeyColumnMap>
+          </Detail>
+          <Detail caption="Infrastructure">
+            <Page type="table" tableName="Inventaire.Infrastructure" numberByDataSource="0" fileName="Infrastructure" caption="Infrastructure" shortCaption="Infrastructure" addSeparator="false" horizontalFilterCondition="" openAdvancedSearchAtFirst="false" recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="1" deleteAbilityMode="3" deleteSelectedAbilityMode="3" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false">
+              <BeforeGridText/>
+              <DetailedDescription/>
+              <ColumnPresentations>
+                <ColumnPresentation fieldName="ID_Infrastructure" caption="ID Infrastructure" selectedFilterOperators="2031871">
+                  <Lookup tableName="Inventaire.Position" linkFieldName="ID_Position" displayFieldName="date" lookupFilter="" useLookupOrdering="true" lookupOrdering="0"/>
+                  <ViewProperties type="dateTime" dateTimeKind="1"/>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="Infrastructure_name" caption="Infrastructure Name" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1589247">
+                  <ViewProperties type="text" maxLength="75"/>
+                  <EditProperties type="textArea" columnCount="50" rowCount="8" placeholder=""/>
+                </ColumnPresentation>
+                <ColumnPresentation fieldName="ID_Position" caption="ID Position" showColumnFilter="false" canSetNull="true" selectedFilterOperators="1573119">
+                  <ViewProperties type="text">
+                    <Format type="number" thousandSeparator=","/>
+                  </ViewProperties>
+                  <EditProperties type="textBox" maxLength="0"/>
+                </ColumnPresentation>
+              </ColumnPresentations>
+              <Columns>
+                <List>
+                  <Column fieldName="ID_Infrastructure"/>
+                  <Column fieldName="Infrastructure_name"/>
+                  <Column fieldName="ID_Position"/>
+                </List>
+                <View>
+                  <Column fieldName="ID_Infrastructure"/>
+                  <Column fieldName="Infrastructure_name"/>
+                  <Column fieldName="ID_Position"/>
+                </View>
+                <Edit>
+                  <Column fieldName="ID_Infrastructure" visible="false"/>
+                  <Column fieldName="Infrastructure_name"/>
+                  <Column fieldName="ID_Position"/>
+                </Edit>
+                <Insert>
+                  <Column fieldName="ID_Infrastructure" visible="false"/>
+                  <Column fieldName="Infrastructure_name"/>
+                  <Column fieldName="ID_Position"/>
+                </Insert>
+                <QuickFilter>
+                  <Column fieldName="ID_Infrastructure"/>
+                  <Column fieldName="Infrastructure_name"/>
+                  <Column fieldName="ID_Position"/>
+                </QuickFilter>
+                <FilterBuilder>
+                  <Column fieldName="ID_Infrastructure"/>
+                  <Column fieldName="Infrastructure_name"/>
+                  <Column fieldName="ID_Position"/>
+                </FilterBuilder>
+                <Print>
+                  <Column fieldName="ID_Infrastructure"/>
+                  <Column fieldName="Infrastructure_name"/>
+                  <Column fieldName="ID_Position"/>
+                </Print>
+                <Export>
+                  <Column fieldName="ID_Infrastructure"/>
+                  <Column fieldName="Infrastructure_name"/>
+                  <Column fieldName="ID_Position"/>
+                </Export>
+                <Compare>
+                  <Column fieldName="ID_Infrastructure" visible="false"/>
+                  <Column fieldName="Infrastructure_name"/>
+                  <Column fieldName="ID_Position"/>
+                </Compare>
+              </Columns>
+              <Details/>
+              <RecordPermissions useRecordPermissions="false"/>
+              <PartitionNavigators/>
+            </Page>
+            <MasterForeignKeyColumnMap>
+              <FieldMap masterColumnName="ID_Position" foreginColumnName="ID_Infrastructure"/>
+            </MasterForeignKeyColumnMap>
+          </Detail>
+        </Details>
+        <RecordPermissions useRecordPermissions="false"/>
+        <PartitionNavigators/>
+      </Page>
+    </Pages>
+    <UserAuthorization/>
+    <UserGrants enableGuestAccess="false">
+      <UserPageGrants/>
+    </UserGrants>
+    <Header/>
+    <Footer/>
+    <PHPOptions/>
+    <Groups>
+      <Group caption="No group"/>
+    </Groups>
+  </Presentation>
+  <UserCSS/>
+  <UserJS>
+var qrcode = new QRCode(document.getElementById(&quot;qrcode&quot;), {
+    width:100,
+    height:100
+});
+
+/*function makeCode(value) {		
+	document.getElementById(&quot;text&quot;).style.visibility = &quot;hidden&quot;
+	qrcode.makeCode(value);
+}
+*/
+
+function makeCode(value) {		
+	qrcode.makeCode(value);
+}
+  </UserJS>
+  <ExcludedPaths/>
+  <DefaultPageProperties recordsPerPage="20" NavigatorPosition="3" insertAbilityMode="1" deleteAbilityMode="3" deleteSelectedAbilityMode="3" contentEncoding="UTF-8" exportToExcelAvailable2="5" exportToWordAvailable2="5" exportToXmlAvailable2="5" exportToCsvAvailable2="5" exportToPdfAvailable2="5" printerFriendlyAvailable2="5" useActionImages="true" showKeyColumnsImagesInGridHeader="false"/>
+  <DefaultDataFormats numberAfterDecimal="4" DecimalSeparator="." ThousandSeparator="," DateTimeFormat="Y-m-d H:i:s" DateFormat="Y-m-d" firstDayOfWeek="0"/>
+</Project>
